@@ -22,9 +22,9 @@ namespace Calculator.Test.Unit
         [TestCase(-3, 2, -1)]
         [TestCase(3, -2, 1)]
         [TestCase(2, 2, 4)]
-        [TestCase(3, 5, 7)] //Denne skal fejle
+        [TestCase(3, 5, 8)] //Denne skal fejle
         [TestCase(10, -7, 3)]
-        [TestCase(48, 33, 15)]
+        [TestCase(48, -33, 15)]
         [TestCase(70, -1, 69)]
         [TestCase(419, 1, 420)]
         [TestCase(1300, 37, 1337)]
@@ -55,7 +55,7 @@ namespace Calculator.Test.Unit
         [TestCase(-2, 0, 0)]
         [TestCase(0, 0, 0)]
         [TestCase(2, 2, 4)]
-        [TestCase(3, 3, 10)] //fejl
+        [TestCase(3, 3, 9)] //fejl
         [TestCase(5, 5, 25)]
         public void Multiply_MultiplyNunmbers_ResultIsCorrect(int a, int b, int result)
         {
