@@ -57,7 +57,7 @@ namespace Calculator.Test.Unit
         [TestCase(2, 2, 4)]
         [TestCase(3, 3, 9)] //fejl
         [TestCase(5, 5, 25)]
-        public void Multiply_MultiplyNunmbers_ResultIsCorrect(int a, int b, int result)
+        public void Multiply_MultiplyNumbers_ResultIsCorrect(int a, int b, int result)
         {
             Assert.That(_uut.Multiply(a, b), Is.EqualTo(result));
         }
@@ -74,6 +74,15 @@ namespace Calculator.Test.Unit
         public void Power_RaiseNumbers_ResultIsCorrect(double x, double exp, double result)
         {
             Assert.That(_uut.Power(x, exp), Is.EqualTo(result));
+        }
+
+        [TestCase(4, 2, 2)]
+        [TestCase(10, 5, 2)]
+        [TestCase(9, 3, 3)]
+        [TestCase(3, 0, 1)]
+        public void Divide_DivideNumbers_ResultIsCorrect(int a, int b, int result)
+        {
+            Assert.That(_uut.Divide(a, b), Is.EqualTo(result));
         }
     }
 }
