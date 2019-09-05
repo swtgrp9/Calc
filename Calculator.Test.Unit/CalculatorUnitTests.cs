@@ -79,10 +79,61 @@ namespace Calculator.Test.Unit
         [TestCase(4, 2, 2)]
         [TestCase(10, 5, 2)]
         [TestCase(9, 3, 3)]
-        [TestCase(3, 0, 0)]
         public void Divide_DivideNumbers_ResultIsCorrect(int a, int b, int result)
         {
             Assert.That(_uut.Divide(a, b), Is.EqualTo(result));
+        }
+
+        [Test]
+        public void DivideException_DivideNumbers_ResultIsException()
+        {
+            Assert.Throws<DivideByZeroException>(() => _uut.Divide(5,0));
+        }
+
+        [Test]
+        public void Add_Accumulator_ResultIsCorrect()
+        {
+            _uut.Add(1300, 37);
+            Assert.That(_uut.Accumulator, Is.EqualTo(1337));
+        }
+
+        [Test]
+        public void Sub_Accumulator_ResultIsCorrect()
+        {
+            _uut.Subtract(1300, 37);
+            Assert.That(_uut.Accumulator, Is.EqualTo(1263));
+        }
+
+        [Test]
+        public void Mul_Accumulator3_ResultIsCorrect()
+        {
+            _uut.Multiply(2, 2);
+            Assert.That(_uut.Accumulator, Is.EqualTo(4));
+        }
+
+        //Test af clear starter her
+        [Test]
+        public void Add__Clear_ResultIsCorrect()
+        {
+            _uut.Add(1300, 37);
+            _uut.clear();
+            Assert.That(_uut.Accumulator, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void Sub_Clear_ResultIsCorrect()
+        {
+            _uut.Subtract(1300, 37);
+            _uut.clear();
+            Assert.That(_uut.Accumulator, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void Mul_Clear_ResultIsCorrect()
+        {
+            _uut.Multiply(2, 2);
+            _uut.clear();
+            Assert.That(_uut.Accumulator, Is.EqualTo(0));
         }
     }
 }
