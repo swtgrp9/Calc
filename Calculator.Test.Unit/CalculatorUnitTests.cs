@@ -79,7 +79,7 @@ namespace Calculator.Test.Unit
         [TestCase(4, 2, 2)]
         [TestCase(10, 5, 2)]
         [TestCase(9, 3, 3)]
-        [TestCase(3, 0, 1)]
+        [TestCase(3, 0, 0)]
         public void Divide_DivideNumbers_ResultIsCorrect(int a, int b, int result)
         {
             Assert.That(_uut.Divide(a, b), Is.EqualTo(result));
