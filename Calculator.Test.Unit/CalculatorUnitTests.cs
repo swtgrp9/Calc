@@ -22,7 +22,7 @@ namespace Calculator.Test.Unit
         [TestCase(-3, 2, -1)]
         [TestCase(3, -2, 1)]
         [TestCase(2, 2, 4)]
-        [TestCase(3, 5, 8)] //Denne skal fejle
+        [TestCase(3, 5, 8)]
         [TestCase(10, -7, 3)]
         [TestCase(48, -33, 15)]
         [TestCase(70, -1, 69)]
@@ -55,7 +55,7 @@ namespace Calculator.Test.Unit
         [TestCase(-2, 0, 0)]
         [TestCase(0, 0, 0)]
         [TestCase(2, 2, 4)]
-        [TestCase(3, 3, 9)] //fejl
+        [TestCase(3, 3, 9)]
         [TestCase(5, 5, 25)]
         public void Multiply_MultiplyNumbers_ResultIsCorrect(int a, int b, int result)
         {
@@ -90,6 +90,7 @@ namespace Calculator.Test.Unit
             Assert.Throws<DivideByZeroException>(() => _uut.Divide(5,0));
         }
 
+        //Test af accumulator starter her
         [Test]
         public void Add_Accumulator_ResultIsCorrect()
         {
